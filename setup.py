@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf8') as fh:
 
 setup(
     name="URLDecoder",
-    version="1.0.2",
+    version="1.0.3",
     packages=find_packages(),
     install_requires=[],
     author="Evil0ctal",

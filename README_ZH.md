@@ -19,35 +19,56 @@ pip install urldecoder
 URLDecoder 可用于解码 URL 编码的字符串并将其转换为 JSON 对象。以下示例演示如何使用 URLDecoder 解码 URL 编码的字符串：
 
 ```python
+# pip install urldecoder
 from URLDecoder.decoder import URLDecoder
 
-# 需要解码的 URL 编码字符串
-url_encoded_string = "name=Adam%20Tan&age=25&city=San%20Jose"
+# Example URL-encoded string
+# url_encoded_string = input("Enter the URL-encoded string:")
+url_encoded_string = "name%3DAdam%20Tan%26age%3D99%26city%3DSan%20Jose%26cat_name%3DBurger%26hobbies%3D%7B%22most_do%22%3A%20%22programming%22%2C%20%22less_do%22%3A%20%22play_skateboard%22%2C%20%22others%22%3A%20%5B%22pool%22%2C%20%22pogo%22%2C%20%22airsoft%22%5D%7D%26job%3Dengineer"
 
-# 初始化 URLDecoder 类
+# Initialize the URLDecoder class
 decoder = URLDecoder()
 
-# 解码 URL 编码的字符串并将其转换为字典对象
-decoded_url = decoder.to_dict(url_encoded_string)
-print(decoded_url)
+# Decode the URL-encoded string and convert it to a dictionary object
+dict_object = decoder.to_dict(url_encoded_string)
+print('dict_object:', dict_object)
 
-# 将字典对象转换为 JSON 对象
+# Convert the dictionary object to a JSON object
 json_object = decoder.to_json(url_encoded_string)
 print(json_object)
+
+# Convert the JSON object to a URL-encoded string
+encoded_url = URLDecoder.to_url(json_object)
+print('encoded_url:', encoded_url)
 ```
 
 上述代码的输出是:
 
 ```dict
-{'name': 'Adam Tan', 'age': 25, 'city': 'San Jose'}
+dict_object: {'name': 'Adam Tan', 'age': 25, 'city': 'San Jose', 'cat_name': 'Burger', 'hobbies': {'most_do': 'programming', 'less_do': 'play_skateboard', 'others': ['pool', 'pogo', 'airsoft']}, 'job': 'engineer'}
 ```
 
 ```json
 {
-    "name": "Adam Tan",
-    "age": "25",
-    "city": "San Jose"
+  "name": "Adam Tan",
+  "age": 99,
+  "city": "San Jose",
+  "cat_name": "Burger",
+  "hobbies": {
+    "most_do": "programming",
+    "less_do": "play_skateboard",
+    "others": [
+      "pool",
+      "pogo",
+      "airsoft"
+    ]
+  },
+  "job": "engineer"
 }
+```
+
+```url
+encoded_url: name=Adam%20Tan&age=25&city=San%20Jose&cat_name=Burger&hobbies=%7B%27most_do%27%3A%20%27programming%27%2C%20%27less_do%27%3A%20%27play_skateboard%27%2C%20%27others%27%3A%20%5B%27pool%27%2C%20%27pogo%27%2C%20%27airsoft%27%5D%7D&job=engineer
 ```
 
 ## 贡献
