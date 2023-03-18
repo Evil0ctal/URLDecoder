@@ -15,8 +15,7 @@ pip install urldecoder
 URLDecoder can be used to decode URL-encoded strings and convert them into JSON objects. The following example demonstrates how to use URLDecoder to decode a URL-encoded string:
 
 ```python
-from url_decoder import URLDecoder
-
+from URLDecoder.decoder import URLDecoder
 
 # Example URL-encoded string
 url_encoded_string = "name=Adam%20Tan&age=25&city=San%20Jose"

@@ -1,4 +1,4 @@
-from url_decoder import URLDecoder
+from URLDecoder.decoder import URLDecoder
 
 
 # Example URL-encoded string
