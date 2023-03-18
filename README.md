@@ -1,5 +1,9 @@
 # URLDecoder
 
+[English](./README.md) | [简体中文](./README_ZH.md)
+
+## Introduction
+
 URLDecoder is a simple yet effective Python library designed to decode URL-encoded strings and convert them into JSON objects. This tool aims to streamline the process of transforming complex URL-encoded strings into a more human-readable and manageable format. With its easy-to-use functionality, URLDecoder can be a valuable addition to any project that requires processing and understanding URL-encoded data. Whether you are working with APIs, web scraping, or data analysis tasks, URLDecoder can help you efficiently decode and interpret URL parameters in a structured way.
 
 ## Installation
